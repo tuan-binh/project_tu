@@ -14,7 +14,6 @@ import javax.servlet.http.HttpSession;
 
 @RestController
 @RequestMapping("/auth")
-@CrossOrigin("*")
 public class AuthController {
 	
 	@Autowired
@@ -28,7 +27,7 @@ public class AuthController {
 	@PostMapping("/register")
 	public ResponseEntity<String> register(@RequestBody UserRegister userRegister) throws CustomException {
 		userService.register(userRegister);
-		return new ResponseEntity<>("String",HttpStatus.CREATED);
+		return new ResponseEntity<>("Success",HttpStatus.CREATED);
 	}
 	
 }

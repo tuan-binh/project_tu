@@ -106,6 +106,7 @@ public class UserService implements IUserService {
 								  } catch (CustomException e) {
 									  throw new RuntimeException(e);
 								  }
+								  break;
 							  default:
 								  try {
 									  throw new CustomException("role not found");

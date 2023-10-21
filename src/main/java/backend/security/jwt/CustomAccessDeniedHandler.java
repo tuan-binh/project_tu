@@ -19,7 +19,7 @@ public class CustomAccessDeniedHandler implements AccessDeniedHandler {
 	private final Logger logger = LoggerFactory.getLogger(CustomAccessDeniedHandler.class);
 	
 	@Override
-	public void handle(HttpServletRequest request, HttpServletResponse response, AccessDeniedException accessDeniedException) throws IOException, ServletException {
+	public void handle(HttpServletRequest request, HttpServletResponse response, AccessDeniedException accessDeniedException) throws IOException {
 		logger.error("Un Permission", accessDeniedException.getMessage());
 		ResponseEntity<String> responseEntity = new ResponseEntity<>("Un Permission", HttpStatus.FORBIDDEN);
 		response.setStatus(responseEntity.getStatusCodeValue());
